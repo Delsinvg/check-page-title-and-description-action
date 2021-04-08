@@ -9,13 +9,13 @@ try {
   axios
     .get(siteUrl)
     .then(function (response) {
-      let matchTitle = response.data.match(/<title[^>]*>([^<]+)<\/title>/)[1];
-      let matchDescription = response.data.match(/<meta name="description" ([^<]+)>/)[1];
-      if (!matchTitle) {
+      let matchTitle = response.data.match(/<title[^>]*>([^<]+)<\/title>/);
+      let matchDescription = response.data.match(/<meta name="description" ([^<]+)>/);
+      if (!matchTitle[1]) {
         core.setFailed("No title on page");
       }
       
-      if (!matchDescription) {
+      if (!matchDescription[1]) {
         core.setFailed("No description on page");
       }
       console.log(matchDescription);
