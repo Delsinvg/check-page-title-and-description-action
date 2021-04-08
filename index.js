@@ -22,8 +22,8 @@ try {
       }
       if (matchTitle && matchDescription) {
         let description = getDescription(matchDescription[1])
-        console.log(description);
-        console.log(matchTitle[1].trim());
+        console.log("Title: " + matchTitle[1].trim());
+        console.log("Description: " + description);
       }
     })
     .catch(function (error) {
