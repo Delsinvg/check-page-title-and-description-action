@@ -4,8 +4,7 @@ const axios = require("axios").default;
 
 try {
   const siteUrl = core.getInput("site");
-  const filledIn = false;
-
+  
   axios
     .get(siteUrl)
     .then(function (response) {
@@ -25,7 +24,6 @@ try {
         let title = matchTitle[1].trim()
         core.setOutput("title", title);
         core.setOutput("description", description);
-
       }
     })
     .catch(function (error) {
