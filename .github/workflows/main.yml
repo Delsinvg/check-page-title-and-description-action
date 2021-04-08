@@ -16,5 +16,4 @@ jobs:
           site: 'https://codedor.be/nl'
       # Use the output from the `check` step
       - name: Get the title and description
-        run: echo "The title is  ${{ steps.check.outputs.title }}"
-        run: echo "The description is  ${{ steps.check.outputs.description }}"
+        run: echo "The title is ${{ steps.check.outputs.title }} & the description is ${{ steps.check.outputs.description }}"
