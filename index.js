@@ -9,8 +9,11 @@ try {
   axios
     .get(siteUrl)
     .then(function (response) {
-      let matches = response.data.match(/<title[^>]*>([^<]+)<\/title>/)[1];
-      console.log(matches);
+      let match = response.data.match(/<title[^>]*>([^<]+)<\/title>/)[1];
+      if (match) {
+          console.log(match);
+          filledIn = ture;
+      }
     })
     .catch(function (error) {
       console.log(error);
