@@ -4,17 +4,19 @@ const axios = require("axios").default;
 
 try {
   const siteUrl = core.getInput("site");
+  const filledIn = false;
 
   axios
     .get(siteUrl)
     .then(function (response) {
-      let filledIn = false;
-      let match = response.data.match(/<title[^>]*>([^<]+)<\/title>/)[1];
-      if (!match) {
+      let matchTitle = response.data.match(/<title[^>]*>([^<]+)<\/title>/)[1];
+      let matchDescription = response.data.match(/<meta name="description" ([^<]+)>/)[1];
+      if (!matchTitle) {
         core.setFailed("No title on page");
       }
+      console.log(matchDescription);
       filledIn = true;
-      console.log(match);
+      console.log(matchTitle);
     })
     .catch(function (error) {
       console.log(error);
