@@ -10,7 +10,7 @@ try {
     .get(siteUrl)
     .then(function (response) {
       let matches = response.data.match(/<title>(.*?)<\/title>/);
-      console.log(matches[0]);
+      console.log(matches);
     })
     .catch(function (error) {
       console.log(error);
