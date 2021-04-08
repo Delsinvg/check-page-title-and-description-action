@@ -1,0 +1,13 @@
+name: 'Check page title & description'
+description: 'This is an action to check if the page has a title or description'
+inputs:
+  site:  # id of input
+    description: 'url of the site to check'
+    required: true
+    default: 'https://codedor.be/nl'
+outputs:
+  filledIn: # id of output
+    description: 'is the title and description filled in?'
+runs:
+  using: 'node12'
+  main: 'index.js'
