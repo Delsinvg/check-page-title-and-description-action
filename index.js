@@ -12,7 +12,7 @@ try {
       let match = response.data.match(/<title[^>]*>([^<]+)<\/title>/)[1];
       if (match) {
           console.log(match);
-          filledIn = ture;
+          filledIn = true;
       }
     })
     .catch(function (error) {
