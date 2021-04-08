@@ -4,7 +4,7 @@ const axios = require("axios").default;
 
 try {
   const siteUrl = core.getInput("site");
-  let filledIn = false;
+  const filledIn = false;
 
   axios
     .get(siteUrl)
@@ -13,7 +13,7 @@ try {
       if (!match) {
         core.setFailed("No title on page");
       }
-      filledIn = true;
+      this.filledIn = true;
       console.log(match);
     })
     .catch(function (error) {
