@@ -14,6 +14,10 @@ try {
       if (!matchTitle) {
         core.setFailed("No title on page");
       }
+      
+      if (!matchDescription) {
+        core.setFailed("No description on page");
+      }
       console.log(matchDescription);
       console.log(matchTitle);
     })

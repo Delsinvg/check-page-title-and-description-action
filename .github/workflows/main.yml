@@ -13,7 +13,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: check
         with:
-          site: 'https://codedor.be/nl'
+          site: 'https://www.pluimplukkers.be/start.htm'
       # Use the output from the `check` step
       - name: Get the output filledIn
         run: echo "The title is filled ${{ steps.check.outputs.filledIn }}"
