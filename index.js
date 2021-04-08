@@ -11,15 +11,15 @@ try {
     .then(function (response) {
       let matchTitle = response.data.match(/<title[^>]*>([^<]+)<\/title>/);
       let matchDescription = response.data.match(/<meta name="description" ([^<]+)>/);
-      if (!matchTitle[1]) {
+      if (!matchTitle) {
         core.setFailed("No title on page");
       }
       
-      if (!matchDescription[1]) {
+      if (!matchDescription) {
         core.setFailed("No description on page");
       }
-      console.log(matchDescription);
-      console.log(matchTitle);
+      console.log(matchDescription[1]);
+      console.log(matchTitle[1]);
     })
     .catch(function (error) {
       console.log(error);
