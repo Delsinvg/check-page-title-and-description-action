@@ -10,16 +10,17 @@ try {
     .get(siteUrl)
     .then(function (response) {
       let match = response.data.match(/<title[^>]*>([^<]+)<\/title>/)[1];
-      if (match) {
-          console.log(match);
-          filledIn = true;
+      if (!match) {
+          core.setFailed('No title on page')
       }
+      console.log(match);
+      filledIn = true;
     })
     .catch(function (error) {
       console.log(error);
     });
 
-  core.setOutput("Title is filled in:", filledIn);
+  core.setOutput("Title is filled in:" + filledIn);
 } catch (error) {
   core.setFailed(error.message);
 }
