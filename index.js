@@ -15,7 +15,6 @@ try {
         core.setFailed("No title on page");
       }
       console.log(matchDescription);
-      filledIn = true;
       console.log(matchTitle);
     })
     .catch(function (error) {
