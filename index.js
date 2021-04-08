@@ -21,8 +21,9 @@ try {
         core.setFailed("No description on page");
       }
       if (matchTitle && matchDescription) {
-        console.log(matchDescription[1]);
-        console.log(matchTitle[1]);
+        let description = getDescription(matchDescription[1])
+        console.log(description);
+        console.log(matchTitle[1].trim());
       }
     })
     .catch(function (error) {
@@ -32,4 +33,10 @@ try {
   core.setOutput("filledIn", filledIn);
 } catch (error) {
   core.setFailed(error.message);
+}
+
+function getDescription(description) {
+  let start_pos = description.indexOf("\"") + 1;
+  let end_pos = description.indexOf("\"", start_pos);
+  return resultDescription = description.substring(start_pos, end_pos);
 }
