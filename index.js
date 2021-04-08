@@ -9,7 +9,7 @@ try {
   axios
     .get(siteUrl)
     .then(function (response) {
-      let matches = response.data.match('Webbureau in Gent');
+      let matches = response.data.match(/<title[^>]*>([^<]+)<\/title>/);
       console.log(matches);
     })
     .catch(function (error) {
