@@ -22,15 +22,15 @@ try {
       }
       if (matchTitle && matchDescription) {
         let description = getDescription(matchDescription[1])
-        console.log("Title: " + matchTitle[1].trim());
-        console.log("Description: " + description);
+        let title = matchTitle[1].trim()
+        core.setOutput("title", title);
+        core.setOutput("description", description);
+
       }
     })
     .catch(function (error) {
       console.log(error);
     });
-
-  core.setOutput("filledIn", filledIn);
 } catch (error) {
   core.setFailed(error.message);
 }

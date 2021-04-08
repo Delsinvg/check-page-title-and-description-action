@@ -6,8 +6,10 @@ inputs:
     required: true
     default: 'https://codedor.be/nl'
 outputs:
-  filledIn: # id of output
-    description: 'Is the title and description filled in?'
+  title: # id of output
+    description: 'Title of the page'
+  description: # id of output
+    description: 'Description of the page'
 runs:
   using: 'node12'
   main: 'index.js'
