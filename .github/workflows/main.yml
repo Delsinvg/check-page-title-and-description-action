@@ -9,7 +9,7 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: check title action step
+      - name: check title and description action step
         uses: ./ # Uses an action in the root directory
         id: check
         with:
