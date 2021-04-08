@@ -20,7 +20,7 @@ try {
       console.log(error);
     });
 
-  core.setOutput("Title is filled in:" + filledIn);
+  core.setOutput("filledIn", filledIn);
 } catch (error) {
   core.setFailed(error.message);
 }
