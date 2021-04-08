@@ -11,10 +11,10 @@ try {
     .then(function (response) {
       let match = response.data.match(/<title[^>]*>([^<]+)<\/title>/)[1];
       if (!match) {
-          core.setFailed('No title on page')
+        core.setFailed("No title on page");
       }
-      console.log(match);
       filledIn = true;
+      console.log(match);
     })
     .catch(function (error) {
       console.log(error);
