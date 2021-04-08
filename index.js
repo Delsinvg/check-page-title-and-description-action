@@ -10,10 +10,7 @@ try {
     .get(siteUrl)
     .then(function (response) {
       let matches = response.data.match(/<title>(.*?)<\/title>/);
-      if (matches[0].length > 0) {
-        filledIn = true;
-        console.log(matches[0]);
-      }
+      console.log(matches[0]);
     })
     .catch(function (error) {
       console.log(error);
