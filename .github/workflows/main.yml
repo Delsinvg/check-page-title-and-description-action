@@ -17,15 +17,15 @@ jobs:
       # Use the output from the `check` step
       - name: Get the title and description
         run: echo "The title is ${{ steps.check.outputs.title }} & the description is ${{ steps.check.outputs.description }}"
-    check_page_speed_insights:
-      runs-on: ubuntu-latest
-      name: A job to chech page speed insights
-      steps:
-        - name: Running Page Speed Insights
-          uses: jakepartusch/psi-action@v1.1
-          id: psi
-          with:
-            url: "https://codedor.be/nl"
-            threshold: 70
-            strategy: desktop
+  check_page_speed_insights:
+    runs-on: ubuntu-latest
+    name: A job to chech page speed insights
+    steps:
+      - name: Running Page Speed Insights
+        uses: jakepartusch/psi-action@v1.1
+        id: psi
+        with:
+          url: "https://codedor.be/nl"
+          threshold: 70
+          strategy: desktop
 
