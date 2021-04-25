@@ -4,13 +4,15 @@ const axios = require("axios").default;
 
 try {
   const siteUrl = core.getInput("site");
+  regexTitle = /<title> ?([^<]+)? <\/title>/g
+  regexDescription = /<meta ?([^<]+)? name="description" ?([^<]+)?>/g
   
   axios
     .get(siteUrl)
     .then(function (response) {
-      let matchTitle = response.data.match(/<title[^>]*>([^<]+)<\/title>/);
+      let matchTitle = response.data.match(regex);
       let matchDescription = response.data.match(
-        /<meta name="description" ([^<]+)>/
+        regexDescription
       );
       if (!matchTitle) {
         core.setFailed("No title on page");
@@ -20,8 +22,8 @@ try {
         core.setFailed("No description on page");
       }
       if (matchTitle && matchDescription) {
-        let description = getDescription(matchDescription[1])
-        let title = matchTitle[1].trim()
+        let description = getDescription(matchDescription[0])
+        let title = matchTitle[0].trim()
         core.setOutput("title", title);
         core.setOutput("description", description);
       }
