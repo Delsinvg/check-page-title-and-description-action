@@ -10,7 +10,7 @@ try {
   axios
     .get(siteUrl)
     .then(function (response) {
-      let matchTitle = response.data.match(regex);
+      let matchTitle = response.data.match(regexTitle);
       let matchDescription = response.data.match(
         regexDescription
       );
