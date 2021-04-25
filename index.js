@@ -37,7 +37,7 @@ try {
 }
 
 function getDescription(description) {
-  let start_pos = description.indexOf("content\"") + 8;
+  let start_pos = description.indexOf("content=\"") + 9;
   let end_pos = description.indexOf("\"", start_pos);
   return resultDescription = description.substring(start_pos, end_pos);
 }
