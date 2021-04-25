@@ -13,7 +13,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: check
         with:
-          site: 'https://www.odisee.be/'
+          site: 'https://www.codedor.be/'
       # Use the output from the `check` step
       - name: Get the title and description
         run: echo "The title is ${{ steps.check.outputs.title }} & the description is ${{ steps.check.outputs.description }}"

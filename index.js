@@ -15,7 +15,6 @@ try {
         regexDescription
       );
 
-      console.log(matchTitle);
       if (!matchTitle) {
         core.setFailed("No title on page");
       }
@@ -25,7 +24,7 @@ try {
       }
       if (matchTitle && matchDescription) {
         let description = getDescription(matchDescription[0])
-        let title = matchTitle[0].trim()
+        let title = matchTitle[1].trim()
         core.setOutput("title", title);
         core.setOutput("description", description);
       }
