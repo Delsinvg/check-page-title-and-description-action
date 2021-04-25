@@ -4,7 +4,7 @@ const axios = require("axios").default;
 
 try {
   const siteUrl = core.getInput("site");
-  regexTitle = /<title[^>]*>([^<]+)<\/title>/g
+  regexTitle = /<title[^>]*>([^<]+)<\/title>/
   regexDescription = /<meta ?([^<]+)? name="description" ?([^<]+)?>/g
 
   axios
