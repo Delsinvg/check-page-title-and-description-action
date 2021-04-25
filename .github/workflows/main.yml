@@ -13,13 +13,13 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: check
         with:
-          site: 'https://vbjk.be/nl'
+          site: 'https://www.odisee.be/'
       # Use the output from the `check` step
       - name: Get the title and description
         run: echo "The title is ${{ steps.check.outputs.title }} & the description is ${{ steps.check.outputs.description }}"
   check_page_speed_insights:
     runs-on: ubuntu-latest
-    name: A job to chech page speed insights
+    name: A job to check page speed insights
     steps:
       - name: Running Page Speed Insights
         uses: jakepartusch/psi-action@v1.1
