@@ -14,7 +14,7 @@ try {
       let matchDescription = response.data.match(
         regexDescription
       );
-
+      console.log(matchDescription)
       if (!matchTitle) {
         core.setFailed("No title on page");
       }
